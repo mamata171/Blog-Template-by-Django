@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} Contact {% endblock title %}
+{% block contact %}active{% endblock contact %}
+
+
+{% block body %}
+    <style>
+        .container{
+            margin-top: 90px;
+            width: 35%;
+            background-color: rgb(218, 190, 228);  
+            border: 2px solid white; 
+            border-radius: 3%;
+        }
+
+        label{
+            margin-top: 5px;
+
+        }
+        button{
+            margin-bottom: 8px;
+        }
+    </style>
+
+    <div class="container">
+        <h3 class="my-3">Contact Us</h3>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control me-3" id="exampleFormControlInput1" placeholder="Enter your name">
+
+            <label for="exampleFormControlInput1" class="form-label">Email Id</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Query</label>
+            <textarea class="form-control mb-3" id="exampleFormControlTextarea1" rows="3" placeholder="Write your query here"></textarea>
+          </div>
+
+          <button type="button" class="btn btn-primary">Primary</button>
+    </div>
+{% endblock body %}
