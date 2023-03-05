@@ -2,6 +2,7 @@ from django.shortcuts import render,HttpResponse
 from blog.models import blog
 from django.utils.text import slugify
 from math import ceil
+from blog.models import contact
 # Create your views here.
 
 # {% load django.template %}
@@ -57,5 +58,13 @@ def search(request):
     return render(request,"search.html")
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        obj = contact(name = name,email = email,message = message)
+        obj.save()
+
     return render(request,'contact.html')
                             
