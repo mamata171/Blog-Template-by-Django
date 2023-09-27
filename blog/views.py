@@ -1,15 +1,13 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render
 from blog.models import blog
 from django.utils.text import slugify
 from math import ceil
-from blog.models import contact
-# Create your views here.
+from blog.models import contact_me
 
 # {% load django.template %}
 
 def home(request):
     # blog.objects.filter(title='').delete()
-
     return render(request,'index.html')
 
 def blogs(request):
@@ -21,7 +19,7 @@ def blogs(request):
     else:
         page = int(page)
 
-    # 1 : 0 - 3
+    # 1 : 0 - 3  here 3 is excluded
     # 2 : 3 - 6
     # 3 : 6 - 9
 
@@ -52,6 +50,7 @@ def blogpost(request,slug):
     
     myblog = blog.objects.filter(slug = slug).first()
     context = {'blog' : myblog}
+    print(myblog)
     return render(request,'blogpost.html',context)
     
 def search(request):
@@ -59,11 +58,11 @@ def search(request):
 
 def contact(request):
     if request.method == "POST":
-        name = request.POST.get('name')
+        name = request.POST.get("name")
         email = request.POST.get('email')
         message = request.POST.get('message')
-
-        obj = contact(name = name,email = email,message = message)
+        
+        obj = contact_me(name = name,email = email,message = message)
         obj.save()
 
     return render(request,'contact.html')

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import blog,contact
+from blog.models import blog,contact_me
 
 # Register your models here.
 
@@ -12,4 +12,4 @@ class blogadmin(admin.ModelAdmin):
         js = ("js/app.js",)
 
 admin.site.register(blog,blogadmin)
-admin.site.register(contact)
+admin.site.register(contact_me)

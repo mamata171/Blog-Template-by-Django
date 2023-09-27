@@ -7,7 +7,7 @@
 <div class = "container my-5">
     {% for blog in blogs %}
        <h3 class = "mt-3">{{blog.title}}</h3>
-       <p>{{blog.content|slice:245}}... </p>
+       <p>{{blog.content|slice:245}}...</p>
        <a href="/blogpost/{{blog.slug}}" class= "text-dark"> <button type="button" class="btn btn-outline-primary">Read More</button></a>
     {% endfor %} 
        </div>
@@ -17,12 +17,12 @@
          <button type="button" class="btn my-3 btn-primary"><a href="/blogs?page={{prev}}" class="text-light">Previous </a> </button>
          {% else %}
          <button type="button" class="btn my-3 btn-primary"><a href="#" class="text-light">Previous </a> </button>
-          {% endif %}
+         {% endif %}
 
-          {% if nxt %}
-          <button type="button" class="btn btn-primary my-3 float-right"><a href="/blogs?page={{nxt}}" class="text-light">Next </a> </button>
-          {% else %}
-          <button type="button" class="btn btn-primary my-3 float-right"><a href="#" class="text-light">Next </a> </button>
-           {% endif %}
+         {% if nxt %}
+         <button type="button" class="btn btn-primary my-3 float-right"><a href="/blogs?page={{nxt}}" class="text-light">Next </a> </button>
+         {% else %}
+         <button type="button" class="btn btn-primary my-3 float-right"><a href="#" class="text-light">Next </a> </button>
+         {% endif %}
    </div>
 {% endblock body %}

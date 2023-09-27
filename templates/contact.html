@@ -21,11 +21,11 @@
 
     <div class="container">
         <h3 class="my-3">Contact Us</h3>
-    <form action="/contact" method="POST">
+        <form action="" class="my-3" method="POST" onsubmit="alert('Form submitted successfully!')">
         {% csrf_token %}
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" name = "name"class="form-control me-3" id="exampleFormControlInput1" placeholder="Enter your name">
+            <input type="text" name = "name" class="form-control me-3" id="exampleFormControlInput1" placeholder="Enter your name">
 
             <label for="email" class="form-label">Email Id</label>
             <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -35,7 +35,7 @@
             <textarea class="form-control mb-3" name="message" id="exampleFormControlTextarea1" rows="3" placeholder="Write your query here"></textarea>
           </div>
 
-          <button type="button" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" id="btn">Submit</button>
         </form>
     
     </div>

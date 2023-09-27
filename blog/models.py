@@ -11,7 +11,7 @@ class blog(models.Model):
     def __str__(self):
         return self.title
     
-class contact(models.Model):
+class contact_me(models.Model):
     sno = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=200)

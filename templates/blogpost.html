@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
- {% block title %} blogpost {% endblock title %} 
+  {% block title %}blogpost {% endblock title %} 
 
 {% block body %}
     <div class = "container mt-5">
-        <h1 class = "my-3">{{blog.title}}</h1>
+        <h1 class = "mb-3 mt-5">{{blog.title}}</h1>
         <div class = "my-3">
             {{blog.content|safe}}
         </div>
     </div>
 
-    
 {% endblock body %}
